@@ -2,11 +2,13 @@
 
 int main(void)
 {
-	uint32_t *pClkCtrReg = (uint32_t*)0x40023830; //RCC_AHB1ENR pointer to register
-	uint32_t *pPortAModeReg = (uint32_t*)0x40020000; //GPIOA_MODER pointer to GPIO A port mode
-	uint32_t *pPortCModeReg = (uint32_t*)0x40020800; //GPIOA_MODER pointer to GPIO A port mode
-	uint32_t *pPortAOutReg = (uint32_t*)0x40020014; //GPIOA_ODR pointer to GPIO A port output register
-	uint32_t *pPortCInReg = (uint32_t*)0x40020810; //GPIOC_IDR pointer to GPIO C port input
+	uint32_t *const pClkCtrReg = (uint32_t*)0x40023830; //RCC_AHB1ENR pointer to register
+	uint32_t *const pPortAModeReg = (uint32_t*)0x40020000; //GPIOA_MODER pointer to GPIO A port mode
+	uint32_t *const pPortCModeReg = (uint32_t*)0x40020800; //GPIOA_MODER pointer to GPIO A port mode
+	uint32_t *const pPortAOutReg = (uint32_t*)0x40020014; //GPIOA_ODR pointer to GPIO A port output register
+	uint32_t const volatile *const pPortCInReg = (uint32_t*)0x40020810; //GPIOC_IDR pointer to GPIO C port input
+	// const volatile since its read-only (code doen't change its value, only external world)
+	// *const because address registers doesn't change
 
 	// Modifing code to use bitwise shift operators
 
@@ -34,5 +36,4 @@ int main(void)
 			*pPortAOutReg &= ~(1 << 5);
 		}
 	}
-
 }
