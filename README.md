@@ -46,7 +46,7 @@ If(pinC13status){
 ```
 The complete code is showed next:
 
-![image](https://user-images.githubusercontent.com/58916022/205995232-b41abfed-3598-4a17-9eec-ccf8657e1b88.png)
+![image](https://user-images.githubusercontent.com/58916022/206009112-fc9cdbd4-99be-4f98-b805-ad2a3d0103e5.png)
 
 ## Debugging
 
