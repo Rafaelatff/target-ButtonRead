@@ -33,7 +33,7 @@ This register is a reading-only (letter 'r' in bit fields).
 
 Then, to read the input of PC13, the instructor presented the following method:
 
-```
+```c
 uint16_t pinC13status = (uint16_t)(*pPortCInReg &  0x2000); //masks to clear all non-important bits and keep result in 13th bit.  
 
 If(pinC13status){ 
